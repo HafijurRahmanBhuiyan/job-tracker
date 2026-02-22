@@ -1,0 +1,12 @@
+document.getElementById("btn-all")
+    .addEventListener('click',function(){
+        document.getElementById("card-1").classList.remove("hidden");
+        document.getElementById("card-2").classList.remove("hidden");
+        document.getElementById("card-3").classList.remove("hidden");
+        document.getElementById("card-4").classList.remove("hidden");
+        document.getElementById("card-5").classList.remove("hidden");
+        document.getElementById("card-6").classList.remove("hidden");
+        document.getElementById("card-7").classList.remove("hidden");
+        document.getElementById("card-8").classList.remove("hidden");
+        document.getElementById("no-job").classList.add("hidden");
+    })

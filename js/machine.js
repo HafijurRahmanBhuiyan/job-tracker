@@ -1,3 +1,4 @@
+// Remove Button
 function remove(id){
     document.getElementById(id).remove();
     let totalJob = document.getElementsByClassName("total-job");
@@ -5,4 +6,5 @@ function remove(id){
         job.innerText = job.innerText - 1;
     }
 }
+
 
