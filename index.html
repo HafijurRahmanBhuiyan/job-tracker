@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <title>Job Tracker</title>
     <style>
         *{
@@ -17,13 +18,14 @@
     </style>
 </head>
 <body class="min-h-screen bg-base-200">
+    
     <header>
         <div class="nav-container w-5xl mx-auto py-5 space-y-3 border-b  border-neutral-200">
             <h2 class="font-bold text-[32px] text-neutral">Job Application Tracker</h2>
             <div class="nav-card-container flex justify-between items-center">
                 <div class="nav-card p-5 rounded-md bg-white  w-[330px] z-10">
                     <p class="text-neutral/80">Total</p>
-                    <p id="total-job" class="text-neutral font-bold text-[24px]">8</p>
+                    <p  class="text-neutral font-bold text-[24px] total-job">8</p>
                 </div>
                 <div class="nav-card p-5 rounded-md bg-white  w-[330px] z-10">
                     <p class="text-neutral/80">Interview</p>
@@ -40,7 +42,7 @@
     <section class="job w-5xl mx-auto pb-15">
         <div class="job-section-title flex justify-between items-center mt-8">
             <h2 class="font-semibold text-[20px] text-[#002C5C]">Available Jobs</h2>
-            <p class="font-medium text-[16px] text-[#323B49]"><span id="total-job">8</span> jobs</p>
+            <p class="font-medium text-[16px] text-[#323B49]"><span class="total-job">8</span> jobs</p>
         </div>
         <div class="job-btn-group flex gap-3 my-4">
             <button id="btn-all" class="btn btn-primary btn-soft w-[80px]">All</button>
@@ -54,7 +56,7 @@
                         <h3 class="font-semibold text-[20px] text-[#002C5C]">Mobile First Corp</h3>
                         <p class="text-neutral/50">React Native Developer</p>
                     </div>
-                    <button id="remove-1" class="btn h-8 w-8 rounded-full">
+                    <button onclick="remove('card-1')" class="btn h-8 w-8 rounded-full">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </div>
@@ -75,7 +77,7 @@
                         <h3 class="font-semibold text-[20px] text-[#002C5C]">WebFlow Agency</h3>
                         <p class="text-neutral/50">Web Designer & Developer</p>
                     </div>
-                    <button id="remove-1" class="btn h-8 w-8 rounded-full">
+                    <button onclick="remove('card-2')"  class="btn h-8 w-8 rounded-full">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </div>
@@ -96,7 +98,7 @@
                         <h3 class="font-semibold text-[20px] text-[#002C5C]">DataViz Solutions</h3>
                         <p class="text-neutral/50">Data Visualization Specialist</p>
                     </div>
-                    <button id="remove-1" class="btn h-8 w-8 rounded-full">
+                    <button onclick="remove('card-3')" class="btn h-8 w-8 rounded-full">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </div>
@@ -117,7 +119,7 @@
                         <h3 class="font-semibold text-[20px] text-[#002C5C]">CloudFirst Inc</h3>
                         <p class="text-neutral/50">Backend Developer</p>
                     </div>
-                    <button id="remove-1" class="btn h-8 w-8 rounded-full">
+                    <button onclick="remove('card-4')" class="btn h-8 w-8 rounded-full">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </div>
@@ -138,7 +140,7 @@
                         <h3 class="font-semibold text-[20px] text-[#002C5C]">Innovation Labs</h3>
                         <p class="text-neutral/50">UI/UX Engineer</p>
                     </div>
-                    <button id="remove-1" class="btn h-8 w-8 rounded-full">
+                    <button onclick="remove('card-5')" class="btn h-8 w-8 rounded-full">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </div>
@@ -159,7 +161,7 @@
                         <h3 class="font-semibold text-[20px] text-[#002C5C]">MegaCorp Solutions</h3>
                         <p class="text-neutral/50">JavaScript Developer</p>
                     </div>
-                    <button id="remove-1" class="btn h-8 w-8 rounded-full">
+                    <button onclick="remove('card-6')" class="btn h-8 w-8 rounded-full">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </div>
@@ -180,7 +182,7 @@
                         <h3 class="font-semibold text-[20px] text-[#002C5C]">StartupXYZ</h3>
                         <p class="text-neutral/50">Full Stack Engineer</p>
                     </div>
-                    <button id="remove-1" class="btn h-8 w-8 rounded-full">
+                    <button onclick="remove('card-7')" class="btn h-8 w-8 rounded-full">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </div>
@@ -201,7 +203,7 @@
                         <h3 class="font-semibold text-[20px] text-[#002C5C]">TechCorp Industries</h3>
                         <p class="text-neutral/50">Senior Frontend Developer</p>
                     </div>
-                    <button id="remove-1" class="btn h-8 w-8 rounded-full">
+                    <button onclick="remove('card-8')" class="btn h-8 w-8 rounded-full">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </div>
@@ -226,5 +228,8 @@
             <p class="text-neutral/60">Check back soon for new job opportunities</p>
         </div>
     </section>
+
+    <script src="js/machine.js"></script>
+    <script src="js/remove.js"></script>
 </body>
 </html>
