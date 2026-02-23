@@ -34,7 +34,67 @@ function remove(id){
     }
 }
 
+// ALL button
+function btnAll(){
+    const jobCount = document.getElementById('job-count');
+    jobCount.innerText = `${allCards.length}`;
+    for(const card of allCards){
+        document.getElementById(card).classList.remove('hidden');
+    }
+    const noJob = document.getElementById('no-job');
+    noJob.classList.add('hidden');
+}
+
+// Interview head button
+function btnInterview(){
+    const jobCount = document.getElementById('job-count');
+    jobCount.innerText = `${interviewCards.length} of ${allCards.length}`;
+    if(interviewCards.length === 0){
+        for(const card of allCards){
+            document.getElementById(card).classList.add('hidden');
+        }
+        const noJob = document.getElementById('no-job');
+        noJob.classList.remove('hidden');
+    }
+    else{
+        for(const card of allCards){
+            document.getElementById(card).classList.add('hidden');
+        }
+        for(const card of interviewCards){
+            document.getElementById(card).classList.remove('hidden');
+        }
+        const noJob = document.getElementById('no-job');
+        noJob.classList.add('hidden');
+    }
+}
+
+// Rejected Head Button
+function btnRejected(){
+    const jobCount = document.getElementById('job-count');
+    jobCount.innerText = `${rejectedCards.length} of ${allCards.length}`;
+    if(rejectedCards.length === 0){
+        for(const card of allCards){
+            document.getElementById(card).classList.add('hidden');
+        }
+        const noJob = document.getElementById('no-job');
+        noJob.classList.remove('hidden');
+    }
+    else{
+        for(const card of allCards){
+            document.getElementById(card).classList.add('hidden');
+        }
+        for(const card of rejectedCards){
+            document.getElementById(card).classList.remove('hidden');
+        }
+        const noJob = document.getElementById('no-job');
+        noJob.classList.add('hidden');
+    }
+}
+
+
+// Card Interview button
 function interview(id){
+    
     if(interviewCards.includes(id) ===false){
         interviewCards.push(id);
     }
@@ -57,6 +117,8 @@ function interview(id){
     }
 }
 
+
+// Card rejected button
 function rejected(id){
     if(rejectedCards.includes(id) === false){
         rejectedCards.push(id);

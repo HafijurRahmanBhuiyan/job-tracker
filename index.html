@@ -42,12 +42,12 @@
     <section class="job w-5xl mx-auto pb-15">
         <div class="job-section-title flex justify-between items-center mt-8">
             <h2 class="font-semibold text-[20px] text-[#002C5C]">Available Jobs</h2>
-            <p class="font-medium text-[16px] text-[#323B49]"><span class="total-job">8</span> jobs</p>
+            <p class="font-medium text-[16px] text-[#323B49]"><span id="job-count" class="total-job">8</span> jobs</p>
         </div>
         <div class="job-btn-group flex gap-3 my-4">
-            <button id="btn-all" class="btn btn-primary btn-soft w-[80px]">All</button>
-            <button id="btn-interview" class="btn btn-primary btn-soft w-[80px]">Interview</button>
-            <button id="btn-rejected" class="btn btn-primary btn-soft w-[80px]">Rejected</button>
+            <button onclick="btnAll()" class="btn btn-primary btn-soft w-[80px]">All</button>
+            <button onclick="btnInterview()" class="btn btn-primary btn-soft w-[80px]">Interview</button>
+            <button onclick="btnRejected()" class="btn btn-primary btn-soft w-[80px]">Rejected</button>
         </div>
         <div class="card-container space-y-5">
             <div id="card-1" class="card p-6 bg-white rounded-md space-y-5">
@@ -230,8 +230,5 @@
     </section>
 
     <script src="js/machine.js"></script>
-    <script src="js/btn-all.js"></script>
-    <script src="js/btn-interview.js"></script>
-    <script src="js/btn-rejected.js"></script>
 </body>
 </html>
