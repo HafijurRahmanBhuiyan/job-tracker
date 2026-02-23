@@ -20,18 +20,18 @@
 <body class="min-h-screen bg-base-200">
     
     <header class="sticky bg-base-200 z-10 top-0">
-        <div class="nav-container w-5xl mx-auto py-5 space-y-3 border-b  border-neutral-200 ">
-            <h2 class="font-bold text-[32px] text-neutral">Job Application Tracker</h2>
-            <div class="nav-card-container flex justify-between items-center">
-                <div class="nav-card p-5 rounded-md bg-white  w-[330px] z-10">
+        <div class="nav-container max-w-md md:max-w-3xl lg:max-w-5xl mx-auto py-5 space-y-3 border-b  border-neutral-200 px-4 md:px-0">
+            <h2 class="font-bold text-[20px] md:text-[32px] text-neutral">Job Application Tracker</h2>
+            <div class="nav-card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="nav-card p-5 rounded-md bg-white  z-10">
                     <p class="text-neutral/80">Total</p>
                     <p  class="text-neutral font-bold text-[24px] total-job">8</p>
                 </div>
-                <div class="nav-card p-5 rounded-md bg-white  w-[330px] z-10">
+                <div class="nav-card p-5 rounded-md bg-white z-10">
                     <p class="text-neutral/80">Interview</p>
                     <p id="count-interview" class="text-[#10B981] font-bold text-[24px]">0</p>
                 </div>
-                <div class="nav-card p-5 rounded-md bg-white  w-[330px] z-10">
+                <div class="nav-card p-5 rounded-md bg-white z-10">
                     <p class="text-neutral/80">Rejected</p>
                     <p id="count-rejected" class="text-[#EF4444] font-bold text-[24px]">0</p>
                 </div>
@@ -39,7 +39,7 @@
         </div>
     </header>
 
-    <section class="job w-5xl mx-auto pb-15">
+    <section class="job max-w-md md:max-w-3xl lg:max-w-5xl mx-auto pb-15 px-4 md:px-0">
         <div class="job-section-title flex justify-between items-center mt-8">
             <h2 class="font-semibold text-[20px] text-[#002C5C]">Available Jobs</h2>
             <p class="font-medium text-[16px] text-[#323B49]"><span id="job-count" class="total-job">8</span> jobs</p>

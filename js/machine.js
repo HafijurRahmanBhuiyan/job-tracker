@@ -110,6 +110,7 @@ function interview(id){
     interviewCount.innerText = interviewCards.length;
 
     if(rejectedCards.includes(id)){
+        
         const indexOfRejectedCards = rejectedCards.indexOf(id);
         rejectedCards.splice(indexOfRejectedCards,1);
         const rejectedCount = document.getElementById("count-rejected");
