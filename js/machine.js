@@ -32,6 +32,21 @@ function remove(id){
         const noJob = document.getElementById('no-job');
         noJob.classList.remove('hidden')
     }
+
+    if(document.querySelector('.interview-btn').getAttribute('id') === 'active'){
+        if(interviewCards.length === 0){
+            document.getElementById('no-job').classList.remove('hidden');
+        }
+        const jobCount = document.getElementById('job-count');
+        jobCount.innerText = `${interviewCards.length} of ${allCards.length}`;
+    }
+    if(document.querySelector('.rejected-btn').getAttribute('id') === 'active'){
+        if(rejectedCards.length === 0){
+            document.getElementById('no-job').classList.remove('hidden');
+        }
+        const jobCount = document.getElementById('job-count');
+        jobCount.innerText = `${rejectedCards.length} of ${allCards.length}`;
+    }
 }
 
 // ALL head button
