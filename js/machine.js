@@ -12,9 +12,16 @@ function remove(id){
         const interviewCardIndex = interviewCards.indexOf(id);
         interviewCards.splice(interviewCardIndex,1);
     }
-
+    if(rejectedCards.includes(id)){
+        const rejectedCardIndex = rejectedCards.indexOf(id);
+        rejectedCards.splice(rejectedCardIndex,1);
+    }
+    
     const interviewCount = document.getElementById("count-interview");
     interviewCount.innerText = interviewCards.length;
+
+    const rejectedCount = document.getElementById("count-rejected");
+    rejectedCount.innerText = rejectedCards.length;
 
     let totalJob = document.getElementsByClassName("total-job");
     for(const job of totalJob){
@@ -41,6 +48,36 @@ function interview(id){
     badge.classList.remove("text-red-600");
     const interviewCount = document.getElementById("count-interview");
     interviewCount.innerText = interviewCards.length;
+
+    if(rejectedCards.includes(id)){
+        const indexOfRejectedCards = rejectedCards.indexOf(id);
+        rejectedCards.splice(indexOfRejectedCards,1);
+        const rejectedCount = document.getElementById("count-rejected");
+        rejectedCount.innerText = rejectedCards.length;
+    }
+}
+
+function rejected(id){
+    if(rejectedCards.includes(id) === false){
+        rejectedCards.push(id);
+    }
+    const lastDigit = id.slice(-1);
+    const badge = document.getElementById(`replace-${lastDigit}`);
+    badge.innerText = "REJECTED";
+    badge.classList.remove("bg-emerald-100/40");
+    badge.classList.remove("text-green-500");
+    badge.classList.remove("bg-slate-200");
+    badge.classList.add("bg-red-100/40");
+    badge.classList.add("text-red-600");
+    const rejectedCount = document.getElementById("count-rejected");
+    rejectedCount.innerText = rejectedCards.length;
+
+    if(interviewCards.includes(id)){
+        const indexOfInterviewCards = interviewCards.indexOf(id);
+        interviewCards.splice(indexOfInterviewCards,1);
+        const interviewCount = document.getElementById("count-interview");
+        interviewCount.innerText = interviewCards.length;
+    }
 }
 
 
