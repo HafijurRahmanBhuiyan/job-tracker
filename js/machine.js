@@ -47,6 +47,13 @@ function remove(id){
         const jobCount = document.getElementById('job-count');
         jobCount.innerText = `${rejectedCards.length} of ${allCards.length}`;
     }
+    if(document.querySelector('.all-btn').getAttribute('id') === 'active'){
+        if(allCards.length === 0){
+            document.getElementById('no-job').classList.remove('hidden');
+        }
+
+    }
+
 }
 
 // ALL head button
@@ -56,8 +63,8 @@ function btnAll(){
     for(const card of allCards){
         document.getElementById(card).classList.remove('hidden');
     }
-    const noJob = document.getElementById('no-job');
-    noJob.classList.add('hidden');
+    // const noJob = document.getElementById('no-job');
+    // noJob.classList.add('hidden');
 
     document.querySelector('.all-btn').setAttribute('id','active');
     document.querySelector('.rejected-btn').setAttribute('id','deactivate');
