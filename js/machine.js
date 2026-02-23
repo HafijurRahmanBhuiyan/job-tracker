@@ -34,7 +34,7 @@ function remove(id){
     }
 }
 
-// ALL button
+// ALL head button
 function btnAll(){
     const jobCount = document.getElementById('job-count');
     jobCount.innerText = `${allCards.length}`;
@@ -43,6 +43,10 @@ function btnAll(){
     }
     const noJob = document.getElementById('no-job');
     noJob.classList.add('hidden');
+
+    document.querySelector('.all-btn').setAttribute('id','active');
+    document.querySelector('.rejected-btn').setAttribute('id','deactivate');
+    document.querySelector('.interview-btn').setAttribute('id','disable');
 }
 
 // Interview head button
@@ -66,6 +70,10 @@ function btnInterview(){
         const noJob = document.getElementById('no-job');
         noJob.classList.add('hidden');
     }
+
+    document.querySelector('.interview-btn').setAttribute('id','active');
+    document.querySelector('.rejected-btn').setAttribute('id','deactivate');
+    document.querySelector('.all-btn').setAttribute('id','disable');
 }
 
 // Rejected Head Button
@@ -89,6 +97,10 @@ function btnRejected(){
         const noJob = document.getElementById('no-job');
         noJob.classList.add('hidden');
     }
+
+    document.querySelector('.rejected-btn').setAttribute('id','active');
+    document.querySelector('.interview-btn').setAttribute('id','deactivate');
+    document.querySelector('.all-btn').setAttribute('id','disable');
 }
 
 
@@ -116,6 +128,10 @@ function interview(id){
         const rejectedCount = document.getElementById("count-rejected");
         rejectedCount.innerText = rejectedCards.length;
     }
+
+    if(document.querySelector('.rejected-btn').getAttribute('id') === 'active'){
+        document.getElementById(id).classList.add('hidden');
+    }
 }
 
 
@@ -140,6 +156,10 @@ function rejected(id){
         interviewCards.splice(indexOfInterviewCards,1);
         const interviewCount = document.getElementById("count-interview");
         interviewCount.innerText = interviewCards.length;
+    }
+
+    if(document.querySelector('.interview-btn').getAttribute('id') === 'active'){
+        document.getElementById(id).classList.add('hidden');
     }
 }
 
