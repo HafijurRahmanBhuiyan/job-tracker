@@ -131,6 +131,12 @@ function interview(id){
 
     if(document.querySelector('.rejected-btn').getAttribute('id') === 'active'){
         document.getElementById(id).classList.add('hidden');
+        if(rejectedCards.length === 0){
+            document.getElementById('no-job').classList.remove('hidden');
+
+        }
+        const jobCount = document.getElementById('job-count');
+        jobCount.innerText = `${rejectedCards.length} of ${allCards.length}`;
     }
 }
 
@@ -160,6 +166,12 @@ function rejected(id){
 
     if(document.querySelector('.interview-btn').getAttribute('id') === 'active'){
         document.getElementById(id).classList.add('hidden');
+
+        if(interviewCards.length === 0){
+            document.getElementById('no-job').classList.remove('hidden');
+        }
+        const jobCount = document.getElementById('job-count');
+        jobCount.innerText = `${interviewCards.length} of ${allCards.length}`;
     }
 }
 
