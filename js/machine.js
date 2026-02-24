@@ -63,8 +63,11 @@ function btnAll(){
     for(const card of allCards){
         document.getElementById(card).classList.remove('hidden');
     }
-    // const noJob = document.getElementById('no-job');
-    // noJob.classList.add('hidden');
+
+    if(allCards.length !== 0){
+        const noJob = document.getElementById('no-job');
+        noJob.classList.add('hidden');
+    }
 
     document.querySelector('.all-btn').setAttribute('id','active');
     document.querySelector('.rejected-btn').setAttribute('id','deactivate');
